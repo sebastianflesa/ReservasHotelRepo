@@ -24,24 +24,22 @@ public class HabitacionRepositoryTest {
     @Test
     public void testSaveHabitacion() {
         habitacion = new Habitacion();
-        habitacion.setId(1L);
-        habitacion.setNumero("101");
+        habitacion.setNumero("999");
         habitacion.setDisponible(true);
         Habitacion savedHabitacion = habitacionRepository.save(habitacion);
         assertNotNull(savedHabitacion.getId());
-        assertEquals("101", savedHabitacion.getNumero());
+        assertEquals("999", savedHabitacion.getNumero());
         assertNotNull(savedHabitacion.getId());
     }
     @Test
     public void testFindById() {
         habitacion = new Habitacion();
-        habitacion.setId(1L);
-        habitacion.setNumero("101");
+        habitacion.setNumero("999");
         habitacion.setDisponible(true);
         Habitacion savedHabitacion = habitacionRepository.save(habitacion);
         Optional<Habitacion> foundHabitacion = habitacionRepository.findById(savedHabitacion.getId());
         assertTrue(foundHabitacion.isPresent());
-        assertEquals("101", foundHabitacion.get().getNumero());
+        assertEquals("999", foundHabitacion.get().getNumero());
     }
 
 

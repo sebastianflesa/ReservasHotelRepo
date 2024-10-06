@@ -32,7 +32,7 @@ public class ReservaRepositoryTest {
     @Test
     public void testSaveReserva() {
         habitacion = new Habitacion();
-        habitacion.setNumero("101");
+        habitacion.setNumero("999");
         habitacion.setDisponible(true);
         Habitacion savedHabitacion = habitacionRepository.save(habitacion);
 
@@ -47,14 +47,14 @@ public class ReservaRepositoryTest {
 
         assertNotNull(savedReserva.getId());
         assertEquals("Juan Pérez", savedReserva.getNombreCliente());
-        assertEquals("101", savedReserva.getHabitacion().getNumero());
+        assertEquals("999", savedReserva.getHabitacion().getNumero());
         assertEquals(EstadoReserva.ACTIVA, savedReserva.getEstadoReserva());
     }
 
     @Test
     public void testFindById() {
         habitacion = new Habitacion();
-        habitacion.setNumero("101");
+        habitacion.setNumero("999");
         habitacion.setDisponible(true);
         Habitacion savedHabitacion = habitacionRepository.save(habitacion);
 
@@ -71,7 +71,7 @@ public class ReservaRepositoryTest {
 
         assertTrue(foundReserva.isPresent());
         assertEquals("Ana Gómez", foundReserva.get().getNombreCliente());
-        assertEquals("101", foundReserva.get().getHabitacion().getNumero());
+        assertEquals("999", foundReserva.get().getHabitacion().getNumero());
     }
 
 }
