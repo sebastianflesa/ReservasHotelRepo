@@ -1,0 +1,22 @@
+version: '1'
+services:
+  microservice:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@wmtrtppfeqwrrw3c_low?TNS_ADMIN=/app/Wallet_WMTRTPPFEQWRRW3C
+      - SPRING_DATASOURCE_USERNAME=FSI_MS_BD_ET
+      - SPRING_DATASOURCE_PASSWORD=ActForm.ex9_BDY
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=oracle.jdbc.driver.OracleDriver
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.OracleDialect
+      - SPRING_JPA_SHOW_SQL=true
+      - TNS_ADMIN=/app/Wallet_WMTRTPPFEQWRRW3C
+    networks:
+      - default
+networks:
+  default:
+    driver: bridge
